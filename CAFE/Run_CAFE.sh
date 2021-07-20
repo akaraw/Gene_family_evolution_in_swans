@@ -35,4 +35,7 @@ awk -F'\t' '{$NF=""; print $0}' tmp.tsv | rev | sed 's/^\s*//g' | rev | tr ' ' '
 #filter the Orthogroups.GeneCount.tsv file to remove OG that have more than 100 proteins in a particular species:
 python2 CAFE5/tutorial/clade_and_size_filter.py -i mod.tsv -s -o cafe.input.tsv
 
+#RUN CAFE5
+$CAFE -i cafe.input.tsv -t SpeciesTree_rooted.txt.ultrametric.tre -c 20 -y lambda.tre
+
 
