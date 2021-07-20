@@ -85,4 +85,40 @@ Rattus_norvegicus<4>    234     2265
 <11>    15      669
 Mus_musculus<5> 8986    92
 
+#cat results/Base_clade_results.txt #The results without Gamma model #$CAFE -i cafe.input.tsv -t SpeciesTree_rooted.txt.ultrametric.tre -c 20 -y lambda.tre
+#Taxon_ID       Increase        Decrease
+<30>    1812    758
+<19>    40      517
+Danio_rerio<31> 3185    1512
+Oryzias_latipes<26>     4543    1383
+<32>    9       2651
+Xenopus_tropicalis<29>  671     2580
+<28>    18      424
+G_aculeatus<27> 2548    2139
+Coturnix_japonica<15>   234     638
+<33>    692     78
+Cygnus_atratus<8>       221     590
+Human<6>        1150    596
+Felis_catus<0>  286     550
+<16>    504     688
+<7>     33      111
+<18>    17      384
+<24>    75      361
+Anas_platyrhynchos_platyrhynchos<12>    450     1082
+<20>    49      5
+<25>    25      1024
+Anolis_carolinensis<23> 711     1750
+<10>    3087    200
+Canismiliaris<1>        551     874
+Gallus_gallus<14>       299     633
+<13>    43      340
+Cygnus_olor<9>  290     1411
+Ornithorhynchus_anatinus<21>    1649    3126
+Bos_taurus<3>   668     490
+<22>    69      1077
+Monodelphis_domestica<17>       5954    1571
+Rattus_norvegicus<4>    243     3645
+<2>     50      283
+<11>    28      596
+Mus_musculus<5> 9000    94
 
