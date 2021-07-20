@@ -12,7 +12,7 @@ python2 ../OrthoFinder/tools/make_ultrametric.py -r 435 SpeciesTree_rooted.txt
 ''
 
 #Create the lambda tree by copying the above tree and replacing the branch length with lambda index e.g: 1,2,3 etc.
-((Danio_rerio:1,(G_aculeatus:1,Oryzias_latipes:1):1):1,(Xenopus_tropicalis:1,((Anolis_carolinensis:1,((Coturnix_japonica:2,Gallus_gallus:2):2,((Cygnus_olor:2,Cygnus_atratus:2):2,Anas_platyrhynchos_platyrhynchos:2):2):2):3,(Ornithorhynchus_anatinus:3,(Monodelphis_domestica:4,(((Bos_taurus:4,(Canismiliaris:4,Felis_catus:4):4):4,Human:4):4,(Mus_musculus:4,Rattus_norvegicus:4):4):4):3):1):1):1);
+((Danio_rerio:1,(G_aculeatus:1,Oryzias_latipes:1):1):1,(Xenopus_tropicalis:2,((Anolis_carolinensis:3,((Coturnix_japonica:3,Gallus_gallus:3):3,((Cygnus_olor:3,Cygnus_atratus:3):3,Anas_platyrhynchos_platyrhynchos:3):3):3):3,(Ornithorhynchus_anatinus:4,(Monodelphis_domestica:4,(((Bos_taurus:4,(Canismiliaris:4,Felis_catus:4):4):4,Human:4):4,(Mus_musculus:4,Rattus_norvegicus:4):4):4):3):1):1):1);
 
 awk -F'\t' '{print "(null)\t"$0}' Orthogroups.GeneCount.tsv > tmp.tsv
 
