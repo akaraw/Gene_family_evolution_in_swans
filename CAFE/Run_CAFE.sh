@@ -36,6 +36,53 @@ awk -F'\t' '{$NF=""; print $0}' tmp.tsv | rev | sed 's/^\s*//g' | rev | tr ' ' '
 python2 CAFE5/tutorial/clade_and_size_filter.py -i mod.tsv -s -o cafe.input.tsv
 
 #RUN CAFE5
-$CAFE -i cafe.input.tsv -t SpeciesTree_rooted.txt.ultrametric.tre -c 20 -y lambda.tre
+CAFE=/path/to/cafe5
+$CAFE -i cafe.input.tsv -t SpeciesTree_rooted.txt.ultrametric.tre -c 20 -y lambda.tre -k 3 -p
+
+#Trees
+echo $'#nexus\nbegin trees;'>Significant_trees.tre
+grep "*" results\*_asr.tre >>Significant_trees.tre
+echo "end;">>Significant_trees.tre
+
+#Counts of significant family
+grep -c "y" results/Gamma_family_results.txt
+
+#Gene family expansion
+less results/Gamma_clade_results.txt
+#Taxon_ID       Increase        Decrease
+<30>    2060    708
+<19>    61      512
+Danio_rerio<31> 3838    1331
+Oryzias_latipes<26>     5008    1146
+<32>    142     16
+Xenopus_tropicalis<29>  961     2348
+<28>    62      192
+G_aculeatus<27> 2995    1737
+Coturnix_japonica<15>   248     626
+<33>    2405    4
+Cygnus_atratus<8>       236     582
+Human<6>        1033    598
+Felis_catus<0>  265     523
+<16>    290     234
+<7>     32      207
+<18>    23      375
+<24>    288     373
+Anas_platyrhynchos_platyrhynchos<12>    471     1072
+<20>    492     208
+<25>    19      766
+Anolis_carolinensis<23> 857     1790
+<10>    1467    205
+Canismiliaris<1>        532     853
+Gallus_gallus<14>       316     624
+<13>    45      330
+Cygnus_olor<9>  298     1405
+Ornithorhynchus_anatinus<21>    1717    3031
+Bos_taurus<3>   602     474
+<22>    149     1071
+Monodelphis_domestica<17>       5870    1267
+Rattus_norvegicus<4>    234     2265
+<2>     57      348
+<11>    15      669
+Mus_musculus<5> 8986    92
 
 
