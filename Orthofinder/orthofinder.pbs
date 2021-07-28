@@ -1,0 +1,10 @@
+#!/bin/bash
+#PBS -N j_OrthoFinder
+#PBS -l select=1:ncpus=24:mem=120gb
+#PBS -l walltime=336:00:00
+#PBS -A UQ-SCI-SCMB
+
+
+source activate ortho
+cd $PBS_O_WORKDIR
+orthofinder -t 20 -a 20 -M msa -p ${TMPDIR}/ -o results -f primary_transcripts
