@@ -1,18 +1,13 @@
 #Making species tree ultrametric
 #timetree.org
-#Estimated time of divergence between "Xenopus tropicalis" and "Danio rerio" = 435
-python2 ../OrthoFinder/tools/make_ultrametric.py -r 435 SpeciesTree_rooted.txt
 
 #cat SpeciesTree_rooted.txt.ultrametric.tre
 ''
-((Danio_rerio:324.802,(G_aculeatus:205.918,Oryzias_latipes:205.918):118.884):110.198,(Xenopus_tropicalis:342.173,((Anolis_carolinensis:244.489,
-((Coturnix_japonica:74.8034,Gallus_gallus:74.8034):51.0573,((Cygnus_olor:46.7045,Cygnus_atratus:46.7045):34.21,Anas_platyrhynchos_platyrhynchos:80.9145):44.9462):118.629):44.1254,
-(Ornithorhynchus_anatinus:232.925,(Monodelphis_domestica:186.553,(((Bos_taurus:76.996,(Canismiliaris:58.0353,Felis_catus:58.0353):18.9606):13.4607,Human:90.4567)
-:23.9457,(Mus_musculus:35.6819,Rattus_norvegicus:35.6819):78.7204):72.1505):46.3717):55.6903):53.5585):92.8267);
+(((Oryzias_latipes:128.00000000,Gasterosteus_aculeatus:128.00000000)'14':101.90276097,Danio_rerio:229.90276097)'13':205.42131365,(Xenopus_tropicalis:351.75848322,((Anolis_carolinensis:279.65697667,((Coturnix_japonica:42.00000000,Gallus_gallus:42.00000000)'11':37.95541635,((Cygnus_olor:6.08027000,Cygnus_atratus:6.08027000)'10':24.24849644,Anas_platyrhynchos:30.32876644)'19':49.62664992)'9':199.70156031)'22':32.24694470,((Monodelphis_domestica:158.59758758,((Canis_lupus:77.75495641,Bos_taurus:77.75495641)'8':18.70743276,((Rattus_norvegicus:20.88741740,Mus_musculus:20.88741740)'6':68.93577002,Homo_sapiens:89.82318742)'30':6.63920175)'29':62.13519841)'27':18.32991064,Ornithorhynchus_anatinus:176.92749821)'35':134.97642315)'43':39.85456185)'42':83.56559140);
 ''
 
 #Create the lambda tree by copying the above tree and replacing the branch length with lambda index e.g: 1,2,3 etc.
-((Danio_rerio:1,(G_aculeatus:1,Oryzias_latipes:1):1):1,(Xenopus_tropicalis:2,((Anolis_carolinensis:3,((Coturnix_japonica:3,Gallus_gallus:3):3,((Cygnus_olor:3,Cygnus_atratus:3):3,Anas_platyrhynchos_platyrhynchos:3):3):3):3,(Ornithorhynchus_anatinus:4,(Monodelphis_domestica:4,(((Bos_taurus:4,(Canismiliaris:4,Felis_catus:4):4):4,Human:4):4,(Mus_musculus:4,Rattus_norvegicus:4):4):4):3):1):1):1);
+(((Oryzias_latipes:1,Gasterosteus_aculeatus:1):1,Danio_rerio:1):,(Xenopus_tropicalis:2,((Anolis_carolinensis:3,((Coturnix_japonica:3,Gallus_gallus:3):3,((Cygnus_olor:3,Cygnus_atratus:3):3,Anas_platyrhynchos:3):3):):,((Monodelphis_domestica:4,((Canis_lupus:4,Bos_taurus:4):,((Rattus_norvegicus:4,Mus_musculus:4):4,Homo_sapiens:4):):):4,Ornithorhynchus_anatinus:4):):):);
 
 awk -F'\t' '{print "(null)\t"$0}' Orthogroups.GeneCount.tsv > tmp.tsv
 
