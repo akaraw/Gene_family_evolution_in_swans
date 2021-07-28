@@ -38,7 +38,7 @@ python2 CAFE5/tutorial/clade_and_size_filter.py -i mod.tsv -s -o cafe.input.tsv
 #RUN CAFE5
 module load GCC
 CAFE=/path/to/cafe5
-$CAFE -i cafe.input.tsv -t SpeciesTree_rooted.txt.ultrametric.tre -c 20 -y lambda.tre -k 3 -p
+$CAFE -i cafe.input.tsv -t SpeciesTree_rooted.txt.ultrametric.tre -c 20 -y lambda.tre -p #-k 3 -p
 
 #Trees
 echo $'#nexus\nbegin trees;'>Significant_trees.tre
