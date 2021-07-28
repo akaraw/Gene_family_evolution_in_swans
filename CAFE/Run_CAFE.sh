@@ -7,22 +7,22 @@
 ''
 
 #Create the lambda tree by copying the above tree and replacing the branch length with lambda index e.g: 1,2,3 etc.
-(((Oryzias_latipes:1,Gasterosteus_aculeatus:1):1,Danio_rerio:1):,(Xenopus_tropicalis:2,((Anolis_carolinensis:3,((Coturnix_japonica:3,Gallus_gallus:3):3,((Cygnus_olor:3,Cygnus_atratus:3):3,Anas_platyrhynchos:3):3):):,((Monodelphis_domestica:4,((Canis_lupus:4,Bos_taurus:4):,((Rattus_norvegicus:4,Mus_musculus:4):4,Homo_sapiens:4):):):4,Ornithorhynchus_anatinus:4):):):);
+(((Oryzias_latipes:1,Gasterosteus_aculeatus:1):1,Danio_rerio:1):1,(Xenopus_tropicalis:2,((Anolis_carolinensis:3,((Coturnix_japonica:3,Gallus_gallus:3):3,((Cygnus_olor:3,Cygnus_atratus:3):3,Anas_platyrhynchos:3):3):3):3,((Monodelphis_domestica:4,((Canis_lupus:4,Bos_taurus:4):4,((Rattus_norvegicus:4,Mus_musculus:4):4,Homo_sapiens:4):4):4):4,Ornithorhynchus_anatinus:4):2):2):1);
 
 awk -F'\t' '{print "(null)\t"$0}' Orthogroups.GeneCount.tsv > tmp.tsv
 
-''
-Desc    Orthogroup      Anas_platyrhynchos_platyrhynchos        Anolis_carolinensis     Bos_taurus      Canismiliaris   Coturnix_japonica       Cygnus_atratus  Cygnus_olor     Danio_rerio  Felis_catus      G_aculeatus     Gallus_gallus   Human   Monodelphis_domestica   Mus_musculus    Ornithorhynchus_anatinus        Oryzias_latipes Rattus_norvegicus       Xenopus_tropicalis   Total
-(null)  OG0000000       19      25      102     73      10      13      16      0       65      8       11      47      121     213     33      10      139     47      952
-(null)  OG0000001       38      41      16      28      26      51      12      28      7       17      77      102     42      105     49      19      88      32      778
-(null)  OG0000002       1       0       64      373     0       0       0       6       51      0       0       0       43      6       0       9       68      13      634
-(null)  OG0000003       6       27      61      60      10      4       5       1       53      0       36      74      90      95      10      1       43      12      588
-(null)  OG0000004       0       9       8       32      0       0       0       17      9       30      0       67      70      123     12      29      100     65      571
-(null)  OG0000005       94      13      3       3       12      55      46      0       7       0       77      10      14      24      86      0       16      0       460
-(null)  OG0000006       0       0       0       0       0       0       0       0       0       0       0       0       444     0       0       0       0       0       444
-(null)  OG0000007       6       1       52      48      6       5       7       5       35      1       7       16      68      108     15      1       51      11      443
-(null)  OG0000008       0       42      37      40      1       0       0       1       42      0       0       46      46      75      32      1       29      1       393
-''
+#''e.g:
+#Desc    Orthogroup      Anas_platyrhynchos_platyrhynchos        Anolis_carolinensis     Bos_taurus      Canismiliaris   Coturnix_japonica       Cygnus_atratus  Cygnus_olor     Danio_rerio  Felis_catus      G_aculeatus     Gallus_gallus   Human   Monodelphis_domestica   Mus_musculus    Ornithorhynchus_anatinus        Oryzias_latipes Rattus_norvegicus       Xenopus_tropicalis   Total
+#(null)  OG0000000       19      25      102     73      10      13      16      0       65      8       11      47      121     213     33      10      139     47      952
+#(null)  OG0000001       38      41      16      28      26      51      12      28      7       17      77      102     42      105     49      19      88      32      778
+#(null)  OG0000002       1       0       64      373     0       0       0       6       51      0       0       0       43      6       0       9       68      13      634
+#(null)  OG0000003       6       27      61      60      10      4       5       1       53      0       36      74      90      95      10      1       43      12      588
+#(null)  OG0000004       0       9       8       32      0       0       0       17      9       30      0       67      70      123     12      29      100     65      571
+#(null)  OG0000005       94      13      3       3       12      55      46      0       7       0       77      10      14      24      86      0       16      0       460
+#(null)  OG0000006       0       0       0       0       0       0       0       0       0       0       0       0       444     0       0       0       0       0       444
+#(null)  OG0000007       6       1       52      48      6       5       7       5       35      1       7       16      68      108     15      1       51      11      443
+#(null)  OG0000008       0       42      37      40      1       0       0       1       42      0       0       46      46      75      32      1       29      1       393
+#''
 #remove the total column from above, without needed to figure out column numbers.
 awk -F'\t' '{$NF=""; print $0}' tmp.tsv | rev | sed 's/^\s*//g' | rev | tr ' ' '\t' > mod.tsv
 
@@ -45,76 +45,5 @@ grep -c "y" results/Gamma_family_results.txt
 
 #Gene family expansion
 less results/Gamma_clade_results.txt
-#Taxon_ID       Increase        Decrease
-<30>    2060    708
-<19>    61      512
-Danio_rerio<31> 3838    1331
-Oryzias_latipes<26>     5008    1146
-<32>    142     16
-Xenopus_tropicalis<29>  961     2348
-<28>    62      192
-G_aculeatus<27> 2995    1737
-Coturnix_japonica<15>   248     626
-<33>    2405    4
-Cygnus_atratus<8>       236     582
-Human<6>        1033    598
-Felis_catus<0>  265     523
-<16>    290     234
-<7>     32      207
-<18>    23      375
-<24>    288     373
-Anas_platyrhynchos_platyrhynchos<12>    471     1072
-<20>    492     208
-<25>    19      766
-Anolis_carolinensis<23> 857     1790
-<10>    1467    205
-Canismiliaris<1>        532     853
-Gallus_gallus<14>       316     624
-<13>    45      330
-Cygnus_olor<9>  298     1405
-Ornithorhynchus_anatinus<21>    1717    3031
-Bos_taurus<3>   602     474
-<22>    149     1071
-Monodelphis_domestica<17>       5870    1267
-Rattus_norvegicus<4>    234     2265
-<2>     57      348
-<11>    15      669
-Mus_musculus<5> 8986    92
 
 #cat results/Base_clade_results.txt #The results without Gamma model #$CAFE -i cafe.input.tsv -t SpeciesTree_rooted.txt.ultrametric.tre -c 20 -y lambda.tre
-#Taxon_ID       Increase        Decrease
-<30>    1812    758
-<19>    40      517
-Danio_rerio<31> 3185    1512
-Oryzias_latipes<26>     4543    1383
-<32>    9       2651
-Xenopus_tropicalis<29>  671     2580
-<28>    18      424
-G_aculeatus<27> 2548    2139
-Coturnix_japonica<15>   234     638
-<33>    692     78
-Cygnus_atratus<8>       221     590
-Human<6>        1150    596
-Felis_catus<0>  286     550
-<16>    504     688
-<7>     33      111
-<18>    17      384
-<24>    75      361
-Anas_platyrhynchos_platyrhynchos<12>    450     1082
-<20>    49      5
-<25>    25      1024
-Anolis_carolinensis<23> 711     1750
-<10>    3087    200
-Canismiliaris<1>        551     874
-Gallus_gallus<14>       299     633
-<13>    43      340
-Cygnus_olor<9>  290     1411
-Ornithorhynchus_anatinus<21>    1649    3126
-Bos_taurus<3>   668     490
-<22>    69      1077
-Monodelphis_domestica<17>       5954    1571
-Rattus_norvegicus<4>    243     3645
-<2>     50      283
-<11>    28      596
-Mus_musculus<5> 9000    94
-
