@@ -16,6 +16,7 @@ Canis familiaris
 Homo sapiens
 Mus musculus
 Rattus norvegicus
+Felis catus
 
 #Upload the list to the timetree.org and download the tree in the newick format (Please see the figure)
 
