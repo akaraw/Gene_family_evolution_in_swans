@@ -6,3 +6,5 @@ Ref: https://academic.oup.com/bioinformatics/article/22/10/1269/237347 - CAFE
 Ref: https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1832-y - OrthoFinder
 
 Ref: https://kumarlab.net/downloads/papers/KumarHedges17.pdf - TimeTree
+
+https://github.com/akaraw/Gene_family_evolution_in_swans/blob/main/CAFE/list_of_species.txt_species.svg
