@@ -1,2 +1,2 @@
-# Gene_family_evolution_in_swans
+# Gene family evolution in swans
 The gene family evolution with OrthoFinder/CAFE
