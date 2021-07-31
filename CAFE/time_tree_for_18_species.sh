@@ -9,6 +9,7 @@ Gallus gallus
 Cygnus olor
 Cygnus atratus
 Anas platyrhynchos
+Taeniopygia guttata
 Ornithorhynchus anatinus
 Monodelphis domestica
 Bos taurus
