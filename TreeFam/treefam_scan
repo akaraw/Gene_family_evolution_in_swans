@@ -1,8 +1,14 @@
- #### In the primary sequences directory ####
- for i in *.fa
- do
- base=$(basename $i ".fa")
- perl treefam_scan.pl -cpu 20 -fasta ${i} -dir hmm_lib/ -hmm_file TreeFam9  -e_seq 1e-5 -outfile ${base}.txt
- grep -v "#" ${base}.txt |sort -k1,1n -k10,10g | awk '!($1 in a){a[$1];print}' > ${base}.fam
- done
+#### In the primary sequences directory ####
+#In the 
+#cd /scratch/project/immunomics_ksgrp/01.TreeFam/treefam_tools/treefam_scan
+#conda activate treefam
+#ln -s ../../proteome/primary_transcripts/*.fa .
+for i in *.fa
+do
+base=$(basename $i ".fa")
+perl treefam_scan.pl -cpu 20 -fasta ${i} -dir hmm_lib/ -hmm_file TreeFam9  -e_seq 1e-5 -outfile ${base}.txt
+grep -v "#\|^$" test | sed -e 's/  */\t/g' > tmp.${base}.tsv
+cat tmp.tsv |sort -k1,1n -k10,10g | awk '!($1 in a){a[$1];print}' | sed 's/\t$//g' > ${base).tsv
+
+done 
  
