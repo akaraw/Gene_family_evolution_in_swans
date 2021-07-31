@@ -8,7 +8,11 @@ do
 base=$(basename $i ".fa")
 perl treefam_scan.pl -cpu 20 -fasta ${i} -dir hmm_lib/ -hmm_file TreeFam9  -e_seq 1e-5 -outfile ${base}.txt
 grep -v "#\|^$" test | sed -e 's/  */\t/g' > tmp.${base}.tsv
-cat tmp.tsv |sort -k1,1n -k10,10g | awk '!($1 in a){a[$1];print}' | sed 's/\t$//g' > ${base).tsv
-./line.sh 6 ${base).tsv > final.${base}.tsv
+cat tmp.${base}.tsv |sort -k1,1n -k10,10g | awk '!($1 in a){a[$1];print}' | sed 's/\t$//g' > ${base).tsv
+./line.sh 6 ${base).tsv > ${base}
+file=${base}
+awk 'NR==1 { print "Desc""\t"FILENAME }; 1' "$file" > temp && mv temp fina.${base}.tsv
+rm ${base}
+rm ${base}.txt
+rm ${base).tsv tmp.${base}.tsv
 done 
- 
