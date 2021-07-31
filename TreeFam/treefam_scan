@@ -11,7 +11,7 @@ grep -v "#\|^$" test | sed -e 's/  */\t/g' > tmp.${base}.tsv
 cat tmp.${base}.tsv |sort -k1,1n -k10,10g | awk '!($1 in a){a[$1];print}' | sed 's/\t$//g' > ${base).tsv
 ./line.sh 6 ${base).tsv > ${base}
 file=${base}
-awk 'NR==1 { print "Desc""\t"FILENAME }; 1' "$file" > temp && mv temp fina.${base}.tsv
+awk 'NR==1 { print "Desc""\t"FILENAME }; 1' "$file" > temp && mv temp final.${base}.tsv
 rm ${base}
 rm ${base}.txt
 rm ${base).tsv tmp.${base}.tsv
