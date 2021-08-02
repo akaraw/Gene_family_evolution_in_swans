@@ -1,4 +1,5 @@
 ###Running hmmerscan instead of treefam_scan.pl
+##https://github.com/Ensembl/treefam_tools/tree/master/treefam_scan
 #hmmer version 3.1
 for i in *.fa
 do
