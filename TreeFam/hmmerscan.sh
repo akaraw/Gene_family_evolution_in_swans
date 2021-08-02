@@ -1,6 +1,6 @@
 ###Running hmmerscan instead of treefam_scan.pl
 ##https://github.com/Ensembl/treefam_tools/tree/master/treefam_scan
-#hmmer version 3.1
+#hmmer version 3.3.2
 #mkdir hmm_lib
 #cd hmm_lib/
 #wget http://www.treefam.org/static/download/treefam9.hmm3.tar.gz
