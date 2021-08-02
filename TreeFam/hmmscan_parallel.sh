@@ -1,3 +1,4 @@
+genome=$1
 seqkit split $genome -p 24
 function hmmer() {
 base=$(basename "$1")
