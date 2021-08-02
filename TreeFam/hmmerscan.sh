@@ -1,6 +1,13 @@
 ###Running hmmerscan instead of treefam_scan.pl
 ##https://github.com/Ensembl/treefam_tools/tree/master/treefam_scan
 #hmmer version 3.1
+#mkdir hmm_lib
+#cd hmm_lib/
+#wget http://www.treefam.org/static/download/treefam9.hmm3.tar.gz
+#tar -xzvf treefam9.hmm3.tar.gz
+#mv treefam9.hmm3 TreeFam9
+#hmmpress TreeFam9
+
 for i in *.fa
 do
 base=$(basename $i ".fa")
