@@ -1,2 +1,8 @@
 #gene list was obtained from the: https://www.innatedb.com/redirect.do?go=resourcesGeneLists
 #And the InnateDB data base: https://www.innatedb.com/annotatedGenes.do?type=innatedb
+#Upload the list to the biomart (Mouse and Human)
+#Then download the peptide sequences 
+#Gene Stable ID should be formatted like below with sed:
+sed 's/>/>gene:/g' pep.fa
+#Then run the primary_transcripts.py from OrthoFinder
+python2 primary_transcripts.py immune_pep.fa
