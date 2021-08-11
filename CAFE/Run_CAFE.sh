@@ -1,5 +1,5 @@
 #Making species tree ultrametric
-#timetree.org > age = 435
+#timetree.org > age=435 #Root Name Euteleostomi CI = 425 - 446 MYA (https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?&name=Euteleostomi) 
 make_ultrametric.py -r age SpeciesTree_rooted.txt
 #cat SpeciesTree_rooted.txt.ultrametric.tre
 
