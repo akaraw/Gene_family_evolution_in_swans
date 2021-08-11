@@ -1,4 +1,5 @@
 #List of species
+##timetree.org > age=435 #Root Name Euteleostomi CI = 425 - 446 MYA (https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?&name=Euteleostomi)
 Danio rerio
 Gasterosteus aculeatus
 Oryzias latipes
@@ -18,5 +19,4 @@ Meleagris gallopavo
 Ficedula albicollis
 
 #Upload the list to the timetree.org and download the tree in the newick format (Please see the figure)
-
 #Newick tree
