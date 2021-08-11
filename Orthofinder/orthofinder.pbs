@@ -8,4 +8,4 @@
 source activate ortho
 cd $PBS_O_WORKDIR
 #orthofinder -t 20 -a 20 -M msa -p ${TMPDIR}/ -o results -f primary_transcripts
-orthofinder -t 20 -a 20 -M msa -p ${TMPDIR}/ -o results3 -f primary_transcripts -s ../cafe/SpeciesTree_rooted.txt.ultrametric.tre
+orthofinder -t 20 -a 20 -M msa -p ${TMPDIR}/ -o results3 -f primary_transcripts -S blast
