@@ -4,6 +4,6 @@ mamba create -n ortho -c bioconda orthofinder
 #The final longest isoform models were incoroporated (for both black swan and mute swan)
 #python2 ~/miniconda3/envs/ortho/bin/primary_transcript.py
 
-orthofinder -t 20 -p ${TMPDIR}/ -o results -f primary_transcripts
+orthofinder -t 20 -p ${TMPDIR}/ -o results -f primary_transcripts -S blast -M mas
 
 #The final results will be in the results/ folder
