@@ -5,7 +5,7 @@ function interpro (){
   genome=$1
   threads=$2
   base=$(basename "$1" ".fa")
-  interproscan.sh -b ${base} -iprlookup -cpu $threads -T ${TMPDIR} dra -appl PANTHER-f tsv -i $genome
+  interproscan.sh -b ${base} -iprlookup -cpu $threads -T ${TMPDIR} dra -appl PANTHER -f tsv -i $genome
   
 for i in *fa
 do
