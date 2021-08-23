@@ -13,12 +13,15 @@ base=$(basename $i ".fa")
 interpro $i
 done
 
-#Getting subfamily count
+#Getting family count
 for i in *.tsv
 do base=$(basename $i ".tsv"); cut -f1,5 $i | grep -v ":SF" > ${base}.txt
 ./line.sh 2 ${base}.tsv > tmp
 mv tmp final.${base}.list
 done
+
+#Getting subfamily count
+for i in *.tsv ; do base=$(basename $i ".tsv"); cut -f1,5 $i | grep ":SF" > ${base}.txt; ./line.sh 2 ${base}.txt > tmp; mv tmp ${base}.list; done
 
 #Full sub family list
 cut -f1 interproscan-5.52-86.0/data/panther/15.0/names.tab | cut -d"." -f1,2 | sort | uniq | grep -v ".mag" | sed 's/\./:/g' > panther_sf_acc.list
